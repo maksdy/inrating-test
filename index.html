@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Users</title>
+	<script src="vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<section id="table-app">
+		<section 
+		v-if="showTable == false"
+		class="table-edit">
+				<label for="name">Name</label>
+				<input
+				v-model="formUser.name"
+				type="text" 
+				id="name">
+				<label for="surname">Surname</label>
+				<input
+				v-model="formUser.surname" 
+				type="text" 
+				id="surname">
+				<label for="phone">Phone</label>
+				<input 
+				v-model="formUser.phone"
+				type="text" 
+				id="phone">
+				<label for="email">E-mail</label>
+				<input 
+				v-model="formUser.email"
+				type="text" 
+				id="email">
+				<button @click="addUser(); toggleTable();">Submit</button>
+				<button @click="cancelAdd">Cancel</button>
+				<input
+				class='file-upload-btn'
+				id="fileUpload" 
+				type="file" />
+				<button
+				@click="getJSON()" class="get-file-btn">
+					Upload JSON
+				</button>
+		</section>
+
+		<section 
+		class="users-table"
+		v-if="showTable">
+			<button @click="toggleTable" class="add-user-btn">Add user</button>
+			<table cellpadding="0" cellspacing="0">
+				<tr class="table-titles">
+					<td>Name</td>
+					<td>Surname</td>
+					<td>Phone</td>
+					<td>Email</td>
+					<td>Edit</td>
+					<td>Delete</td>
+				</tr>
+				<tr v-for="user in users">
+					<td>{{ user.name }}</td>
+					<td> {{ user.surname}} </td>
+					<td> {{ user.phone }} </td>
+					<td> {{ user.email }} </td>
+					<td><button @click="editUser(user); toggleTable();">Edit</button></td>
+					<td><button @click="deleteUser(user)" class="del-button">X</button></td>
+				</tr>
+			</table>
+		</section>
+	</section>
+	<script src="main.js"></script>
+</body>
+</html>

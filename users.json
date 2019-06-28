@@ -1,0 +1,28 @@
+{
+	"users": [
+		{
+		"name":"Maks",
+		"surname":"Dy",
+		"phone":"0505968837",
+		"email":"max@gmail.com"
+		},
+		{
+		"name":"Vi",
+		"surname":"Hrotska",
+		"phone":"0991111111",
+		"email":"vi.hr@gmail.com"
+		},
+		{
+		"name":"Ivan",
+		"surname":"Petrov",
+		"phone":"0992222222",
+		"email":"iv.pet.@gmail.com"
+		}
+	]
+}
+
+
+
+
+
+
